@@ -5,9 +5,16 @@ class Collection {
   }
 
   keyBy(index) {
-    
+
   }
 
+  weirdSortNameTest() {
+
+  }
+
+  sortBy() {
+    
+  }
 
 }
 

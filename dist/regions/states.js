@@ -235,11 +235,11 @@ var States = new Proxy([new _Collection2.default(), new _States()], {
   // }
 
   get: function get(proxyTarget, propertyKey) {
-    console.log('name', name);
-    console.log('receiver', receiver);
     console.log('proxyTarget', proxyTarget);
     console.log('propertyKey', propertyKey);
-    console.log('parent', parent);
+    if (parent) {
+      console.log('parent', parent);
+    }
     var foundParent = proxyTarget.find(function (parent) {
       return parent[propertyKey] !== undefined;
     });
