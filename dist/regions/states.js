@@ -222,7 +222,7 @@ var _States = function () {
   return _States;
 }();
 
-var States = new Proxy([new _Collection2.default(), new _States()], {
+var States = new Proxy({ self: new _States(), collection: new _Collection2.default(new _States()) }, {
 
   // get: function (target, name, receiver) {
   //   console.log('target', target);

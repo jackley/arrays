@@ -263,8 +263,18 @@ class _States {
     ];
   }
 }
+/*
+ Could do multiple inheritance
+ let States = new Proxy({ self: new _States, collection: new Collection}, {
+*/
 
-let States = new Proxy({ self: new _States, collection: new Collection(new _States)}, {
+/* 
+ Maybe we'll just do Classception
+ let States = new Proxy(new Collection(new _States)) {
+
+*/
+let States = new Proxy(new Collection(new _States), { 
+
 
   // get: function (target, name, receiver) {
   //   console.log('target', target);
