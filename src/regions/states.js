@@ -328,7 +328,7 @@ let States = new Proxy(new Collection(new _States), {
         console.log(receiver);
         // console.log(args);
         console.log(collection.data[prop]);
-        let method = collection.data.__proto__[prop].apply(collection.guest, arguments);
+        let method = collection.data[prop].apply(collection.guest, arguments);
         console.log(method);
         method.apply(collection.guest, [k, n]);
       }
