@@ -1,4 +1,4 @@
 import states from './states';
 
 
-export { states };
+export default { states };

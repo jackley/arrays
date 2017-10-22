@@ -3,4 +3,4 @@ import regions from './regions';
 //   regions: regions,
 // };
 
-export { regions };
+export default { regions };
