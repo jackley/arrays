@@ -272,16 +272,18 @@ var States = new Proxy(new _Collection2.default(new _States()), {
     console.log('prop', prop);
     var klass = null;
     var method = null;
-    if (prop in collection.guest.__proto__) {
+    if (prop in collection.guest) {
       var _console;
 
       // assume methods live on the prototype
-      console.log('prop', prop);
-      (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
+      console.log('!--------------------Guest--------------------!');
+
       klass = collection.guest;
       method = klass[prop];
       console.log('klass', klass);
       console.log('method', method);
+      console.log('args', arguments);
+      (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
       /* return function (...args) {
         var methodprop = prop;
         // we now have access to both methodprop and arguments

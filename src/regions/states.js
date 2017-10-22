@@ -321,13 +321,18 @@ let States = new Proxy(new Collection(new _States), {
         console.log('method', method);
         console.log('args', arguments);
         console.log('args', ...args);
+        
         /* return function (...args) {
           var methodprop = prop;
           // we now have access to both methodprop and arguments
         }; */
       } else if (prop in collection.__proto__) { // assume methods live on the prototype // assume instance vars like on the target
         console.log('Collection has proto!');
+        console.log('klass', klass);
+        console.log('method', method);
+        console.log('args', arguments);
         return collection.__proto__[prop];
+        console.log('args', ...args);
       } else {
         // klass =  Reflect.get(collection.guest, prop, prop);
         // console.log('klass', klass);
