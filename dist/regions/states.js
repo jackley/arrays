@@ -275,9 +275,15 @@ var States = new Proxy(new _Collection2.default(new _States()), {
       // assume methods live on the prototype // assume instance vars like on the target
       console.log('Collection has proto!');
     } else {
-      klass = Reflect.get(collection.guest, name, prop);
-      console.log('klass', klass);
-      return klass;
+      var _console2;
+
+      // klass =  Reflect.get(collection.guest, name, prop);
+      // console.log('klass', klass);
+      // return klass;
+      console.log('Go Native');
+      (_console2 = console).log.apply(_console2, _toConsumableArray(args));
+      console.log(collection.data[prop]);
+      console.log(collection.data[prop]());
     }
   }
 });

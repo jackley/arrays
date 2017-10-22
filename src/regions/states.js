@@ -291,7 +291,7 @@ let States = new Proxy(new Collection(new _States), {
   //   }
   // }
   
-  get: function (collection, prop) {
+  get: function (collection, prop, receiver) {
     console.log('collection', collection);
     console.log('prop', prop);
       let klass = null;
@@ -314,7 +314,8 @@ let States = new Proxy(new Collection(new _States), {
         // console.log('klass', klass);
         // return klass;
         console.log('Go Native');
-        console.log(...args);
+        console.log(args);
+        console.log(receiver);
         console.log(collection.data[prop]);
         console.log(collection.data[prop]());
       }
