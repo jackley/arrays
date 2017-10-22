@@ -3,7 +3,7 @@ import Collection from '../Collection';
 class States extends Collection {
   
   constructor() {
-    super();
+    //super();
     this.data = this.defaults();
   }
 

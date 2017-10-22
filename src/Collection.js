@@ -9,6 +9,7 @@ class _Collection {
 }
 
 let Collection = new Proxy(new _Collection, {
+  
   get: function (target, name, receiver) {
     console.log('Proxy!');
     if (name in target.__proto__) { // assume methods live on the prototype
