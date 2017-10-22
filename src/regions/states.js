@@ -1,4 +1,5 @@
-export default [
+
+export default states = [
   {
     code: 'AL',
     name: 'ALABAMA',

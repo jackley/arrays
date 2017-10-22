@@ -1,9 +1,7 @@
 'use strict';
 
-var regions = require('./regions');
+var _regions = require('./regions');
 
-// var _arrayz = {
-//   regions: regions,
-// };
+var _regions2 = _interopRequireDefault(_regions);
 
-module.exports = { regions: regions };
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

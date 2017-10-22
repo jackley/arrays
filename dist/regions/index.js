@@ -1,9 +1,17 @@
 'use strict';
 
-var states = require('./states');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _states = require('./states');
+
+var _states2 = _interopRequireDefault(_states);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var regions = {
-  states: states
+  states: _states2.default
 };
 
-module.exports.regions = { states: states };
+exports.default = regions;
