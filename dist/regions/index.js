@@ -6,4 +6,4 @@ var regions = {
   states: states
 };
 
-module.exports = regions;
+module.exports.regions = regions;
