@@ -2,7 +2,7 @@
   "name": "arrayz",
   "version": "0.0.5",
   "description": "Repository of useful and common arrays in different programming languages.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jackley/arrays.git"
+    "url": "git+https://github.com/jackley/arrayz.git"
   },
   "keywords": [
     "Useful",
