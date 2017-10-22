@@ -7,7 +7,7 @@ class _States {
   }
 
   other() {
-
+    console.log('something weird');
   }
 
   defaults() {
@@ -291,31 +291,26 @@ let States = new Proxy(new Collection(new _States), {
   //   }
   // }
   
-  get: function (targets, prop) {
-    console.log('targets', targets);
+  get: function (collection, prop) {
+    console.log('collection', collection);
     console.log('prop', prop);
-    if (parent) {
-      console.log('parent', parent);
-    }
-    const foundParent = targets.find(parent => parent[prop] !== undefined);
-    targets.forEach((t) => {
-      console.log(t);
-      if (name in t.__proto__) { // assume methods live on the prototype
+      let klass = null;
+      let method = null;
+      if (name in collection.guest.__proto__) { // assume methods live on the prototype
         console.log('name', name);
         console.log('args', ...args);
-
+        klass = collection.guest;
+        method = klass[name];
+        console.log('klass',klass);
+        console.log('method', method);
         /* return function (...args) {
           var methodName = name;
           // we now have access to both methodName and arguments
         }; */
       } else { // assume instance vars like on the target
-        const reflection =  Reflect.get(targets, name, receiver);
-        console.log(reflection);
-        return reflection;
+        klass =  Reflect.get(collection.guest, name, prop);
+        return klass;
       }
-    });
-    console.log('foundparent', foundParent);
-    return foundParent && foundParent[prop];
   }
 });
 

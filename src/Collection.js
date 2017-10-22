@@ -1,12 +1,15 @@
 class Collection {
 
   constructor(guest) {
-    this.data = null;
-    this.hosting = guest;
+    this.guest = guest;
+    // this.data = guest.data;
+    Object.assign(this, guest);
   }
 
   keyBy(index) {
-
+    this.data.forEach((d, n) => {
+      console.log(n + 30, d);
+    });
   }
 
   weirdSortNameTest() {
