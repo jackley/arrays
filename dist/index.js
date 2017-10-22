@@ -2,8 +2,8 @@
 
 var regions = require('./regions');
 
-var _arrayz = {
-  regions: regions
-};
+// var _arrayz = {
+//   regions: regions,
+// };
 
-module.exports = _arrayz;
+module.exports = { regions: regions };
