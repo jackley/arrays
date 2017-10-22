@@ -279,8 +279,8 @@ var States = new Proxy(new _Collection2.default(new _States()), {
       // console.log('klass', klass);
       // return klass;
       console.log('Go Native');
-      console.log(args);
       console.log(receiver);
+      // console.log(args);
       console.log(collection.data[prop]);
       console.log(collection.data[prop]());
     }
