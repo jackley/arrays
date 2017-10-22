@@ -4,4 +4,4 @@ const regions = {
   states
 };
 
-module.exports = regions;
+module.exports.regions = regions;
