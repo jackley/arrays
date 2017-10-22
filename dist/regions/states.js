@@ -249,6 +249,7 @@ var States = new Proxy([new _Collection2.default(), new _States()], {
       return parent[prop] !== undefined;
     });
     targets.forEach(function (t) {
+      console.log(t);
       if (name in t.__proto__) {
         var _console;
 

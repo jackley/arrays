@@ -1,7 +1,8 @@
 class Collection {
 
-  constructor() {
+  constructor(guest) {
     this.data = null;
+    this.hosting = guest;
   }
 
   keyBy(index) {
@@ -13,7 +14,7 @@ class Collection {
   }
 
   sortBy() {
-    
+
   }
 
 }

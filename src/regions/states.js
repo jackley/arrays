@@ -264,7 +264,7 @@ class _States {
   }
 }
 
-let States = new Proxy([new Collection, new _States], {
+let States = new Proxy({ self: new _States, collection: new Collection(new _States)}, {
 
   // get: function (target, name, receiver) {
   //   console.log('target', target);
@@ -280,7 +280,7 @@ let States = new Proxy([new Collection, new _States], {
   //     return Reflect.get(target, name, receiver);
   //   }
   // }
-
+  
   get: function (targets, prop) {
     console.log('targets', targets);
     console.log('prop', prop);
