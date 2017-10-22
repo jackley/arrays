@@ -1,6 +1,6 @@
 import Collection from '../Collection';
 
-class States extends _Collection {
+class States extends Collection {
   
   constructor() {
     super();
