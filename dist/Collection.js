@@ -30,6 +30,11 @@ var Collection = function () {
   }, {
     key: "sortBy",
     value: function sortBy() {}
+  }, {
+    key: "forEach",
+    value: function forEach(x, n) {
+      return this.data.forEach;
+    }
   }]);
 
   return Collection;

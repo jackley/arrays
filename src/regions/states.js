@@ -307,6 +307,7 @@ let States = new Proxy(new Collection(new _States), {
     console.log('prop', prop);
       let klass = null;
       let method = null;
+      console.log(name in collection.__proto__);
       if (name in collection.guest.__proto__) { // assume methods live on the prototype
         console.log('name', name);
         console.log('args', ...args);
