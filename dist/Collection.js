@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -15,7 +15,7 @@ var _Collection = function _Collection() {
 var Collection = new Proxy(new _Collection(), {
 
   get: function get(target, name, receiver) {
-    console.log('Proxy!');
+    console.log(target, name, receiver);
     if (name in target.__proto__) {
       // assume methods live on the prototype
       return function () {

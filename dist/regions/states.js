@@ -14,23 +14,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var _States = function () {
+  function _States() {
+    _classCallCheck(this, _States);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var States = function (_Collection) {
-  _inherits(States, _Collection);
-
-  function States() {
-    _classCallCheck(this, States);
-
-    var _this = _possibleConstructorReturn(this, (States.__proto__ || Object.getPrototypeOf(States)).call(this));
-
-    _this.data = _this.defaults();
-    return _this;
+    this.data = this.defaults();
   }
 
-  _createClass(States, [{
+  _createClass(_States, [{
     key: 'defaults',
     value: function defaults() {
       return [{
@@ -223,7 +214,24 @@ var States = function (_Collection) {
     }
   }]);
 
-  return States;
-}(_Collection3.default);
+  return _States;
+}();
 
-exports.default = new States();
+var States = new Proxy([new _Collection(), new _States()], {
+
+  get: function get(target, name, receiver) {
+    console.log(target, name, receiver);
+    if (name in target.__proto__) {
+      // assume methods live on the prototype
+      return function () {
+        var methodName = name;
+        // we now have access to both methodName and arguments
+      };
+    } else {
+      // assume instance vars like on the target
+      return Reflect.get(target, name, receiver);
+    }
+  }
+});
+
+exports.default = States;
