@@ -1,4 +1,4 @@
-export default states = [
+const states = [
   {
     code: 'AL',
     name: 'ALABAMA',
@@ -247,5 +247,6 @@ export default states = [
     code: 'AP',
     name: 'ARMED FORCES PACIFIC'
   },
-
 ];
+
+export default states;
