@@ -268,6 +268,7 @@ var States = new Proxy(new _Collection2.default(new _States()), {
     console.log('prop', prop);
     var klass = null;
     var method = null;
+    console.log(name in collection.__proto__);
     if (name in collection.guest.__proto__) {
       var _console;
 

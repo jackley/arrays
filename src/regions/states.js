@@ -307,22 +307,22 @@ let States = new Proxy(new Collection(new _States), {
     console.log('prop', prop);
       let klass = null;
       let method = null;
-      console.log(name in collection.__proto__);
-      if (name in collection.guest.__proto__) { // assume methods live on the prototype
-        console.log('name', name);
+      console.log(prop in []);
+      if (prop in collection.guest.__proto__) { // assume methods live on the prototype
+        console.log('prop', prop);
         console.log('args', ...args);
         klass = collection.guest;
-        method = klass[name];
+        method = klass[prop];
         console.log('klass',klass);
         console.log('method', method);
         /* return function (...args) {
-          var methodName = name;
-          // we now have access to both methodName and arguments
+          var methodprop = prop;
+          // we now have access to both methodprop and arguments
         }; */
-      } else if (name in collection.__proto__) { // assume methods live on the prototype // assume instance vars like on the target
+      } else if (prop in collection.__proto__) { // assume methods live on the prototype // assume instance vars like on the target
         console.log('Collection has proto!');
       } else {
-        // klass =  Reflect.get(collection.guest, name, prop);
+        // klass =  Reflect.get(collection.guest, prop, prop);
         // console.log('klass', klass);
         // return klass;
         console.log('Go Native');
