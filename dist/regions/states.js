@@ -4,192 +4,226 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var states = [{
-  code: 'AL',
-  name: 'ALABAMA'
-}, {
-  code: 'AK',
-  name: 'ALASKA'
-}, {
-  code: 'AS',
-  name: 'AMERICAN SAMOA'
-}, {
-  code: 'AZ',
-  name: 'ARIZONA'
-}, {
-  code: 'AR',
-  name: 'ARKANSAS'
-}, {
-  code: 'CA',
-  name: 'CALIFORNIA'
-}, {
-  code: 'CO',
-  name: 'COLORADO'
-}, {
-  code: 'CT',
-  name: 'CONNECTICUT'
-}, {
-  code: 'DE',
-  name: 'DELAWARE'
-}, {
-  code: 'DC',
-  name: 'DISTRICT OF COLUMBIA'
-}, {
-  code: 'FM',
-  name: 'FEDERATED STATES OF MICRONESIA'
-}, {
-  code: 'FL',
-  name: 'FLORIDA'
-}, {
-  code: 'GA',
-  name: 'GEORGIA'
-}, {
-  code: 'GU',
-  name: 'GUAM GU'
-}, {
-  code: 'HI',
-  name: 'HAWAII'
-}, {
-  code: 'ID',
-  name: 'IDAHO'
-}, {
-  code: 'IL',
-  name: 'ILLINOIS'
-}, {
-  code: 'IN',
-  name: 'INDIANA'
-}, {
-  code: 'IA',
-  name: 'IOWA'
-}, {
-  code: 'KS',
-  name: 'KANSAS'
-}, {
-  code: 'KY',
-  name: 'KENTUCKY'
-}, {
-  code: 'LA',
-  name: 'LOUISIANA'
-}, {
-  code: 'ME',
-  name: 'MAINE'
-}, {
-  code: 'MH',
-  name: 'MARSHALL ISLANDS'
-}, {
-  code: 'MD',
-  name: 'MARYLAND'
-}, {
-  code: 'MA',
-  name: 'MASSACHUSETTS'
-}, {
-  code: 'MI',
-  name: 'MICHIGAN'
-}, {
-  code: 'MN',
-  name: 'MINNESOTA'
-}, {
-  code: 'MS',
-  name: 'MISSISSIPPI'
-}, {
-  code: 'MO',
-  name: 'MISSOURI'
-}, {
-  code: 'MT',
-  name: 'MONTANA'
-}, {
-  code: 'NE',
-  name: 'NEBRASKA'
-}, {
-  code: 'NV',
-  name: 'NEVADA'
-}, {
-  code: 'NH',
-  name: 'NEW HAMPSHIRE'
-}, {
-  code: 'NJ',
-  name: 'NEW JERSEY'
-}, {
-  code: 'NM',
-  name: 'NEW MEXICO'
-}, {
-  code: 'NY',
-  name: 'NEW YORK'
-}, {
-  code: 'NC',
-  name: 'NORTH CAROLINA'
-}, {
-  code: 'ND',
-  name: 'NORTH DAKOTA'
-}, {
-  code: 'MP',
-  name: 'NORTHERN MARIANA ISLANDS'
-}, {
-  code: 'OH',
-  name: 'OHIO'
-}, {
-  code: 'OK',
-  name: 'OKLAHOMA'
-}, {
-  code: 'OR',
-  name: 'OREGON'
-}, {
-  code: 'PW',
-  name: 'PALAU'
-}, {
-  code: 'PA',
-  name: 'PENNSYLVANIA'
-}, {
-  code: 'PR',
-  name: 'PUERTO RICO'
-}, {
-  code: 'RI',
-  name: 'RHODE ISLAND'
-}, {
-  code: 'SC',
-  name: 'SOUTH CAROLINA'
-}, {
-  code: 'SD',
-  name: 'SOUTH DAKOTA'
-}, {
-  code: 'TN',
-  name: 'TENNESSEE'
-}, {
-  code: 'TX',
-  name: 'TEXAS'
-}, {
-  code: 'UT',
-  name: 'UTAH'
-}, {
-  code: 'VT',
-  name: 'VERMONT'
-}, {
-  code: 'VI',
-  name: 'VIRGIN ISLANDS'
-}, {
-  code: 'VA',
-  name: 'VIRGINIA'
-}, {
-  code: 'WA',
-  name: 'WASHINGTON'
-}, {
-  code: 'WV',
-  name: 'WEST VIRGINIA'
-}, {
-  code: 'WI',
-  name: 'WISCONSIN'
-}, {
-  code: 'WY',
-  name: 'WYOMING'
-}, {
-  code: 'AE',
-  name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
-}, {
-  code: 'AA',
-  name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
-}, {
-  code: 'AP',
-  name: 'ARMED FORCES PACIFIC'
-}];
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-exports.default = states;
+var _Collection2 = require('../Collection');
+
+var _Collection3 = _interopRequireDefault(_Collection2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var States = function (_Collection) {
+  _inherits(States, _Collection);
+
+  function States() {
+    _classCallCheck(this, States);
+
+    var _this = _possibleConstructorReturn(this, (States.__proto__ || Object.getPrototypeOf(States)).call(this));
+
+    _this.data = _this.defaults();
+    return _this;
+  }
+
+  _createClass(States, [{
+    key: 'defaults',
+    value: function defaults() {
+      return [{
+        code: 'AL',
+        name: 'ALABAMA'
+      }, {
+        code: 'AK',
+        name: 'ALASKA'
+      }, {
+        code: 'AS',
+        name: 'AMERICAN SAMOA'
+      }, {
+        code: 'AZ',
+        name: 'ARIZONA'
+      }, {
+        code: 'AR',
+        name: 'ARKANSAS'
+      }, {
+        code: 'CA',
+        name: 'CALIFORNIA'
+      }, {
+        code: 'CO',
+        name: 'COLORADO'
+      }, {
+        code: 'CT',
+        name: 'CONNECTICUT'
+      }, {
+        code: 'DE',
+        name: 'DELAWARE'
+      }, {
+        code: 'DC',
+        name: 'DISTRICT OF COLUMBIA'
+      }, {
+        code: 'FM',
+        name: 'FEDERATED STATES OF MICRONESIA'
+      }, {
+        code: 'FL',
+        name: 'FLORIDA'
+      }, {
+        code: 'GA',
+        name: 'GEORGIA'
+      }, {
+        code: 'GU',
+        name: 'GUAM GU'
+      }, {
+        code: 'HI',
+        name: 'HAWAII'
+      }, {
+        code: 'ID',
+        name: 'IDAHO'
+      }, {
+        code: 'IL',
+        name: 'ILLINOIS'
+      }, {
+        code: 'IN',
+        name: 'INDIANA'
+      }, {
+        code: 'IA',
+        name: 'IOWA'
+      }, {
+        code: 'KS',
+        name: 'KANSAS'
+      }, {
+        code: 'KY',
+        name: 'KENTUCKY'
+      }, {
+        code: 'LA',
+        name: 'LOUISIANA'
+      }, {
+        code: 'ME',
+        name: 'MAINE'
+      }, {
+        code: 'MH',
+        name: 'MARSHALL ISLANDS'
+      }, {
+        code: 'MD',
+        name: 'MARYLAND'
+      }, {
+        code: 'MA',
+        name: 'MASSACHUSETTS'
+      }, {
+        code: 'MI',
+        name: 'MICHIGAN'
+      }, {
+        code: 'MN',
+        name: 'MINNESOTA'
+      }, {
+        code: 'MS',
+        name: 'MISSISSIPPI'
+      }, {
+        code: 'MO',
+        name: 'MISSOURI'
+      }, {
+        code: 'MT',
+        name: 'MONTANA'
+      }, {
+        code: 'NE',
+        name: 'NEBRASKA'
+      }, {
+        code: 'NV',
+        name: 'NEVADA'
+      }, {
+        code: 'NH',
+        name: 'NEW HAMPSHIRE'
+      }, {
+        code: 'NJ',
+        name: 'NEW JERSEY'
+      }, {
+        code: 'NM',
+        name: 'NEW MEXICO'
+      }, {
+        code: 'NY',
+        name: 'NEW YORK'
+      }, {
+        code: 'NC',
+        name: 'NORTH CAROLINA'
+      }, {
+        code: 'ND',
+        name: 'NORTH DAKOTA'
+      }, {
+        code: 'MP',
+        name: 'NORTHERN MARIANA ISLANDS'
+      }, {
+        code: 'OH',
+        name: 'OHIO'
+      }, {
+        code: 'OK',
+        name: 'OKLAHOMA'
+      }, {
+        code: 'OR',
+        name: 'OREGON'
+      }, {
+        code: 'PW',
+        name: 'PALAU'
+      }, {
+        code: 'PA',
+        name: 'PENNSYLVANIA'
+      }, {
+        code: 'PR',
+        name: 'PUERTO RICO'
+      }, {
+        code: 'RI',
+        name: 'RHODE ISLAND'
+      }, {
+        code: 'SC',
+        name: 'SOUTH CAROLINA'
+      }, {
+        code: 'SD',
+        name: 'SOUTH DAKOTA'
+      }, {
+        code: 'TN',
+        name: 'TENNESSEE'
+      }, {
+        code: 'TX',
+        name: 'TEXAS'
+      }, {
+        code: 'UT',
+        name: 'UTAH'
+      }, {
+        code: 'VT',
+        name: 'VERMONT'
+      }, {
+        code: 'VI',
+        name: 'VIRGIN ISLANDS'
+      }, {
+        code: 'VA',
+        name: 'VIRGINIA'
+      }, {
+        code: 'WA',
+        name: 'WASHINGTON'
+      }, {
+        code: 'WV',
+        name: 'WEST VIRGINIA'
+      }, {
+        code: 'WI',
+        name: 'WISCONSIN'
+      }, {
+        code: 'WY',
+        name: 'WYOMING'
+      }, {
+        code: 'AE',
+        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
+      }, {
+        code: 'AA',
+        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
+      }, {
+        code: 'AP',
+        name: 'ARMED FORCES PACIFIC'
+      }];
+    }
+  }]);
+
+  return States;
+}(_Collection3.default);
+
+exports.default = new States();
