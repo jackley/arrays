@@ -11,7 +11,7 @@ class _Collection {
 let Collection = new Proxy(new _Collection, {
   
   get: function (target, name, receiver) {
-    console.log('Proxy!');
+    console.log(target, name, receiver);
     if (name in target.__proto__) { // assume methods live on the prototype
       return function (...args) {
         var methodName = name;

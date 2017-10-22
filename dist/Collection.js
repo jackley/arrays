@@ -13,6 +13,7 @@ var _Collection = function _Collection() {
 };
 
 var Collection = new Proxy(new _Collection(), {
+
   get: function get(target, name, receiver) {
     console.log('Proxy!');
     if (name in target.__proto__) {
