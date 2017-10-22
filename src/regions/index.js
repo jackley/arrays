@@ -1,7 +1,7 @@
-import states from './states';
+var states = require('./states');
 
 const regions = {
   states
 };
 
-export default regions;
+module.exports = regions;

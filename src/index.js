@@ -1,3 +1,7 @@
-import regions from './regions';
+var regions = require('./regions');
 
-module.exports.regions = regions;
+var _arrayz = {
+  regions: regions,
+};
+
+module.exports = _arrayz;
