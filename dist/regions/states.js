@@ -252,7 +252,7 @@ var States = new Proxy(new _Collection2.default(new _States()), {
   //   }
   // }
 
-  get: function get(collection, prop) {
+  get: function get(collection, prop, receiver) {
     console.log('collection', collection);
     console.log('prop', prop);
     var klass = null;
@@ -275,13 +275,12 @@ var States = new Proxy(new _Collection2.default(new _States()), {
       // assume methods live on the prototype // assume instance vars like on the target
       console.log('Collection has proto!');
     } else {
-      var _console2;
-
       // klass =  Reflect.get(collection.guest, name, prop);
       // console.log('klass', klass);
       // return klass;
       console.log('Go Native');
-      (_console2 = console).log.apply(_console2, _toConsumableArray(args));
+      console.log(args);
+      console.log(receiver);
       console.log(collection.data[prop]);
       console.log(collection.data[prop]());
     }
