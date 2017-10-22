@@ -1,4 +1,4 @@
-const states = [
+export const states = [
   {
     code: 'AL',
     name: 'ALABAMA',
@@ -249,4 +249,3 @@ const states = [
   },
 ];
 
-export default states;
