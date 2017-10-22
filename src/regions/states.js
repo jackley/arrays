@@ -260,7 +260,7 @@ class _States {
   }
 }
 
-let States = new Proxy([new _Collection, new _States], {
+let States = new Proxy([new Collection, new _States], {
 
   get: function (target, name, receiver) {
     console.log(target, name, receiver);
