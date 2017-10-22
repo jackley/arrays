@@ -278,7 +278,6 @@ let States = new Proxy([new Collection, new _States], {
   // }
 
   get: function (proxyTarget, propertyKey) {
-    console.log('target', target);
     console.log('name', name);
     console.log('receiver', receiver);
     console.log('proxyTarget', proxyTarget);

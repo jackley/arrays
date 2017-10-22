@@ -235,7 +235,6 @@ var States = new Proxy([new _Collection2.default(), new _States()], {
   // }
 
   get: function get(proxyTarget, propertyKey) {
-    console.log('target', target);
     console.log('name', name);
     console.log('receiver', receiver);
     console.log('proxyTarget', proxyTarget);
