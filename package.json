@@ -6,7 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "setup": "npm install && mv README.tpl.md README.md",
+    "prestart": "npm install",
+    "start": "gulp --dev && npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,7 +40,34 @@
   },
   "homepage": "https://github.com/jackley/arrayz#readme",
   "devDependencies": {
+    "arrayz": "0.0.28",
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-stage-2": "^6.11.0",
+    "bootstrap-sass": "^3.3.7",
+    "browser-sync": "^2.8.0",
+    "cross-env": "^5.0.1",
+    "del": "^2.2.0",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-if": "^2.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.1",
+    "imports-loader": "^0.6.4",
+    "run-sequence": "^1.0.2",
+    "scripts-loader": "^0.1.3",
+    "webpack": "^1.10.5"
   }
 }

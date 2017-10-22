@@ -262,19 +262,31 @@ class _States {
 
 let States = new Proxy([new Collection, new _States], {
 
-  get: function (target, name, receiver) {
+  // get: function (target, name, receiver) {
+  //   console.log('target', target);
+  //   console.log('name', name);
+  //   console.log('receiver', receiver);
+
+  //   if (name in target.__proto__) { // assume methods live on the prototype
+  //     return function (...args) {
+  //       var methodName = name;
+  //       // we now have access to both methodName and arguments
+  //     };
+  //   } else { // assume instance vars like on the target
+  //     return Reflect.get(target, name, receiver);
+  //   }
+  // }
+
+  get: function (proxyTarget, propertyKey) {
     console.log('target', target);
     console.log('name', name);
     console.log('receiver', receiver);
-
-    if (name in target.__proto__) { // assume methods live on the prototype
-      return function (...args) {
-        var methodName = name;
-        // we now have access to both methodName and arguments
-      };
-    } else { // assume instance vars like on the target
-      return Reflect.get(target, name, receiver);
-    }
+    console.log('proxyTarget', proxyTarget);
+    console.log('propertyKey', propertyKey);
+    console.log('parent', parent);
+    const foundParent = proxyTarget.find(parent => parent[propertyKey] !== undefined);
+    console.log('foundparent', foundParent);
+    return foundParent && foundParent[propertyKey];
   }
 });
 

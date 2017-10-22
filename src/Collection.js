@@ -4,6 +4,9 @@ class Collection {
     this.data = null;
   }
 
+  keyBy(index) {
+    
+  }
 
 
 }
