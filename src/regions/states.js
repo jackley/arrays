@@ -263,7 +263,10 @@ class _States {
 let States = new Proxy([new Collection, new _States], {
 
   get: function (target, name, receiver) {
-    console.log(target, name, receiver);
+    console.log('target', target);
+    console.log('name', name);
+    console.log('receiver', receiver);
+
     if (name in target.__proto__) { // assume methods live on the prototype
       return function (...args) {
         var methodName = name;
