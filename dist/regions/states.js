@@ -252,16 +252,20 @@ var States = new Proxy(new _Collection2.default(new _States()), {
   //   }
   // }
   call: function call(collection, prop, receiver) {
+    console.log('!--------------------call--------------------!');
     console.log('call');
     console.log('collection', collection);
     console.log('prop', prop);
-    console.log('prop', receiver);
+    console.log('receiver', receiver);
+    console.log('!--------------------call--------------------!');
   },
   apply: function apply(collection, prop, receiver) {
+    console.log('!--------------------apply--------------------!');
     console.log('apply');
     console.log('collection', collection);
     console.log('prop', prop);
-    console.log('prop', receiver);
+    console.log('receiver', receiver);
+    console.log('!--------------------apply--------------------!');
   },
   get: function get(collection, prop, receiver) {
     console.log('collection', collection);

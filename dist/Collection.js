@@ -33,7 +33,7 @@ var Collection = function () {
   }, {
     key: "forEach",
     value: function forEach(x, n) {
-      return this.data.forEach;
+      return this.guest.data.forEach;
     }
   }]);
 

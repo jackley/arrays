@@ -312,13 +312,15 @@ let States = new Proxy(new Collection(new _States), {
     console.log('prop', prop);
       let klass = null;
       let method = null;
-      if (prop in collection.guest.__proto__) { // assume methods live on the prototype
-        console.log('prop', prop);
-        console.log('args', ...args);
+      if (prop in collection.guest ) { // assume methods live on the prototype
+        console.log('!--------------------Guest--------------------!')
+        
         klass = collection.guest;
         method = klass[prop];
         console.log('klass',klass);
         console.log('method', method);
+        console.log('args', arguments);
+        console.log('args', ...args);
         /* return function (...args) {
           var methodprop = prop;
           // we now have access to both methodprop and arguments
