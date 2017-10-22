@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var states = [{
+var states = exports.states = [{
   code: 'AL',
   name: 'ALABAMA'
 }, {
@@ -190,5 +190,3 @@ var states = [{
   code: 'AP',
   name: 'ARMED FORCES PACIFIC'
 }];
-
-exports.default = states;
