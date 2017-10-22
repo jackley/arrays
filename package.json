@@ -2,7 +2,7 @@
   "name": "arrayz",
   "version": "0.0.4",
   "description": "Repository of useful and common arrays in different programming languages.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
