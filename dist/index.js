@@ -14,4 +14,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //   regions: regions,
 // };
 
-exports.default = { regions: _regions2.default };
+exports.default = _regions2.default;
