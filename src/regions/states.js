@@ -290,7 +290,12 @@ let States = new Proxy(new Collection(new _States), {
   //     return Reflect.get(target, name, receiver);
   //   }
   // }
-  
+  call: (collection, prop, receiver) => {
+    console.log('call');
+    console.log('collection', collection);
+    console.log('prop', prop);
+    console.log('prop', receiver);
+  },
   get: function (collection, prop, receiver) {
     console.log('collection', collection);
     console.log('prop', prop);
