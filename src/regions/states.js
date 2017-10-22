@@ -1,4 +1,4 @@
-import Collection from '../_Collection';
+import Collection from '../Collection';
 
 class States extends _Collection {
   
