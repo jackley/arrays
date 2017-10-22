@@ -4,7 +4,6 @@ class Collection {
     this.guest = guest;
     // this.data = guest.data;
     Object.assign(this, guest);
-    Object.assign(this.__proto__, guest.__proto__);
   }
 
   keyBy(index) {
