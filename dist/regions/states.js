@@ -25,7 +25,9 @@ var _States = function () {
 
   _createClass(_States, [{
     key: 'other',
-    value: function other() {}
+    value: function other() {
+      console.log('something weird');
+    }
   }, {
     key: 'defaults',
     value: function defaults() {
@@ -250,37 +252,30 @@ var States = new Proxy(new _Collection2.default(new _States()), {
   //   }
   // }
 
-  get: function get(targets, prop) {
-    console.log('targets', targets);
+  get: function get(collection, prop) {
+    console.log('collection', collection);
     console.log('prop', prop);
-    if (parent) {
-      console.log('parent', parent);
+    var klass = null;
+    var method = null;
+    if (name in collection.guest.__proto__) {
+      var _console;
+
+      // assume methods live on the prototype
+      console.log('name', name);
+      (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
+      klass = collection.guest;
+      method = klass[name];
+      console.log('klass', klass);
+      console.log('method', method);
+      /* return function (...args) {
+        var methodName = name;
+        // we now have access to both methodName and arguments
+      }; */
+    } else {
+      // assume instance vars like on the target
+      klass = Reflect.get(collection.guest, name, prop);
+      return klass;
     }
-    var foundParent = targets.find(function (parent) {
-      return parent[prop] !== undefined;
-    });
-    targets.forEach(function (t) {
-      console.log(t);
-      if (name in t.__proto__) {
-        var _console;
-
-        // assume methods live on the prototype
-        console.log('name', name);
-        (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
-
-        /* return function (...args) {
-          var methodName = name;
-          // we now have access to both methodName and arguments
-        }; */
-      } else {
-        // assume instance vars like on the target
-        var reflection = Reflect.get(targets, name, receiver);
-        console.log(reflection);
-        return reflection;
-      }
-    });
-    console.log('foundparent', foundParent);
-    return foundParent && foundParent[prop];
   }
 });
 
