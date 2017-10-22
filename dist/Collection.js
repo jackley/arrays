@@ -18,6 +18,12 @@ var Collection = function () {
   _createClass(Collection, [{
     key: "keyBy",
     value: function keyBy(index) {}
+  }, {
+    key: "weirdSortNameTest",
+    value: function weirdSortNameTest() {}
+  }, {
+    key: "sortBy",
+    value: function sortBy() {}
   }]);
 
   return Collection;

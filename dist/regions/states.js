@@ -12,6 +12,8 @@ var _Collection2 = _interopRequireDefault(_Collection);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var _States = function () {
@@ -22,6 +24,9 @@ var _States = function () {
   }
 
   _createClass(_States, [{
+    key: 'other',
+    value: function other() {}
+  }, {
     key: 'defaults',
     value: function defaults() {
       return [{
@@ -234,17 +239,36 @@ var States = new Proxy([new _Collection2.default(), new _States()], {
   //   }
   // }
 
-  get: function get(proxyTarget, propertyKey) {
-    console.log('proxyTarget', proxyTarget);
-    console.log('propertyKey', propertyKey);
+  get: function get(targets, prop) {
+    console.log('targets', targets);
+    console.log('prop', prop);
     if (parent) {
       console.log('parent', parent);
     }
-    var foundParent = proxyTarget.find(function (parent) {
-      return parent[propertyKey] !== undefined;
+    var foundParent = targets.find(function (parent) {
+      return parent[prop] !== undefined;
+    });
+    targets.forEach(function (t) {
+      if (name in t.__proto__) {
+        var _console;
+
+        // assume methods live on the prototype
+        console.log('name', name);
+        (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
+
+        /* return function (...args) {
+          var methodName = name;
+          // we now have access to both methodName and arguments
+        }; */
+      } else {
+        // assume instance vars like on the target
+        var reflection = Reflect.get(targets, name, receiver);
+        console.log(reflection);
+        return reflection;
+      }
     });
     console.log('foundparent', foundParent);
-    return foundParent && foundParent[propertyKey];
+    return foundParent && foundParent[prop];
   }
 });
 

@@ -289,6 +289,7 @@ let States = new Proxy([new Collection, new _States], {
     }
     const foundParent = targets.find(parent => parent[prop] !== undefined);
     targets.forEach((t) => {
+      console.log(t);
       if (name in t.__proto__) { // assume methods live on the prototype
         console.log('name', name);
         console.log('args', ...args);
