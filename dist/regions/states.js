@@ -293,7 +293,7 @@ var States = new Proxy(new _Collection2.default(new _States()), {
       console.log(receiver);
       // console.log(args);
       console.log(collection.data[prop]);
-      console.log([][prop]);
+      console.log([][prop].apply(collection.guest, collection.guest.arguments));
 
       var _method = collection.data[prop].apply(collection.guest, arguments);
       console.log(_method);

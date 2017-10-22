@@ -20,6 +20,10 @@ class Collection {
 
   }
 
+  forEach(x, n) {
+    return this.data.forEach;
+  }
+
 }
 
 // let Collection = new Proxy(new _Collection, {
