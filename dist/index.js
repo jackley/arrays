@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.regions = undefined;
 
 var _regions = require('./regions');
 
@@ -15,4 +14,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //   regions: regions,
 // };
 
-exports.regions = _regions2.default;
+exports.default = { regions: _regions2.default };
