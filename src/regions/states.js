@@ -291,16 +291,21 @@ let States = new Proxy(new Collection(new _States), {
   //   }
   // }
   call: (collection, prop, receiver) => {
+    console.log('!--------------------call--------------------!')
     console.log('call');
     console.log('collection', collection);
     console.log('prop', prop);
-    console.log('prop', receiver);
+    console.log('receiver', receiver);
+    console.log('!--------------------call--------------------!')
+    
   },
   apply: (collection, prop, receiver) => {
+    console.log('!--------------------apply--------------------!')   
     console.log('apply');
     console.log('collection', collection);
     console.log('prop', prop);
-    console.log('prop', receiver);
+    console.log('receiver', receiver);
+    console.log('!--------------------apply--------------------!')
   },
   get: function (collection, prop, receiver) {
     console.log('collection', collection);

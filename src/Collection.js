@@ -21,7 +21,7 @@ class Collection {
   }
 
   forEach(x, n) {
-    return this.data.forEach;
+    return this.guest.data.forEach;
   }
 
 }

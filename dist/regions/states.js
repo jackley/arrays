@@ -268,7 +268,6 @@ var States = new Proxy(new _Collection2.default(new _States()), {
     console.log('prop', prop);
     var klass = null;
     var method = null;
-    console.log(prop in []);
     if (prop in collection.guest.__proto__) {
       var _console;
 
@@ -286,6 +285,7 @@ var States = new Proxy(new _Collection2.default(new _States()), {
     } else if (prop in collection.__proto__) {
       // assume methods live on the prototype // assume instance vars like on the target
       console.log('Collection has proto!');
+      return collection.__proto__[prop];
     } else {
       // klass =  Reflect.get(collection.guest, prop, prop);
       // console.log('klass', klass);
