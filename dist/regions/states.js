@@ -28,7 +28,8 @@ var _States = function () {
     Object.assign(this.data.__proto__, collection);
 
     // Assign any custom collection methods, or override collections
-    this.data.other = this.other;
+    // this.data.other = this.other; ? How does this even work
+    this.data.__proto__.other = this.other;
 
     // return the raw array
     return this.data;

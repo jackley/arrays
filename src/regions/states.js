@@ -14,14 +14,29 @@ class _States {
 
     // Assign any custom collection methods, or override collections
     // this.data.other = this.other; ? How does this even work
-    this.data.__proto__.other = this.other;
+    this.data.__proto__.withArmedForces = this.withArmedForces;
 
     // return the raw array
     return this.data;
   }
 
-  other() {
-    console.log('something weird');
+  withArmedForces() {
+    this.data.push(
+      {
+        code: 'AE',
+        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
+      });
+    this.data.push(
+      {
+        code: 'AA',
+        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)',
+      });
+    this.data.push(
+      {
+        code: 'AP',
+        name: 'ARMED FORCES PACIFIC'
+      });
+    return this.data;
   }
 
   defaults() {
@@ -262,18 +277,7 @@ class _States {
         code: 'WY',
         name: 'WYOMING',
       },
-      {
-        code: 'AE',
-        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
-      },
-      {
-        code: 'AA',
-        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)',
-      },
-      {
-        code: 'AP',
-        name: 'ARMED FORCES PACIFIC'
-      },
+
     ];
   }
 }
