@@ -21,7 +21,7 @@ class _States {
   }
 
   _withArmedForces() {
-    console.log(this.__proto__);
+    //console.log(this.__proto__);
     this.push({
         code: 'AE',
         name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
