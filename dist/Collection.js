@@ -21,18 +21,18 @@ var Collection = function () {
   }
 
   _createClass(Collection, [{
-    key: "keyBy",
-    value: function keyBy(index) {
+    key: "_keyBy",
+    value: function _keyBy(index) {
       this.data.forEach(function (d, n) {
         console.log(n + 30, d);
       });
     }
   }, {
-    key: "weirdSortNameTest",
-    value: function weirdSortNameTest() {}
+    key: "_weirdSortNameTest",
+    value: function _weirdSortNameTest() {}
   }, {
-    key: "sortBy",
-    value: function sortBy() {}
+    key: "_sortBy",
+    value: function _sortBy() {}
 
     // forEach(x, n) {
     //   return this.guest.data.forEach;

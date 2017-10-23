@@ -3,10 +3,19 @@ import Collection from '../Collection';
 class _States {
 
   constructor() {
+    // Get our default Data
     this.data = this.defaults();
-    this.collection = new Collection;
-    Object.assign(this.data.__proto__, this.collection);
-    Object.assign(this.data.__proto__, this);
+
+    // New up a collection
+    const collection = new Collection;
+
+    // Add shared collection stuff
+    Object.assign(this.data.__proto__, collection);
+
+    // Assign any custom collection methods, or override collections
+    this.data.other = this.other;
+
+    // return the raw array
     return this.data;
   }
 
@@ -267,16 +276,7 @@ class _States {
     ];
   }
 }
-/*
- Could do multiple inheritance
- let States = new Proxy({ self: new _States, collection: new Collection}, {
-*/
 
-/*
- Maybe we'll just do Classception
- let States = new Proxy(new Collection(new _States)) {
-
-*/
 let States = new _States;
 
 export default States;
