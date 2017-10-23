@@ -1,9 +1,12 @@
 class Collection {
 
   constructor(guest) {
-    this.guest = guest;
+    // this.guest = guest;
     // this.data = guest.data;
-    Object.assign(this, guest);
+    // Object.assign(this, guest);
+    this.keyBy = this._keyBy;
+    this.weirdSortNameTest = this._weirdSortNameTest;
+    this.sortBy = this._sortBy;
   }
 
   keyBy(index) {
@@ -20,9 +23,9 @@ class Collection {
 
   }
 
-  forEach(x, n) {
-    return this.guest.data.forEach;
-  }
+  // forEach(x, n) {
+  //   return this.guest.data.forEach;
+  // }
 
 }
 
