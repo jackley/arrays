@@ -12,8 +12,6 @@ var _Collection2 = _interopRequireDefault(_Collection);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var _States = function () {
@@ -21,6 +19,10 @@ var _States = function () {
     _classCallCheck(this, _States);
 
     this.data = this.defaults();
+    this.collection = new _Collection2.default();
+    Object.assign(this.data.__proto__, this.collection);
+    Object.assign(this.data.__proto__, this);
+    return this.data;
   }
 
   _createClass(_States, [{
@@ -228,85 +230,13 @@ var _States = function () {
  let States = new Proxy({ self: new _States, collection: new Collection}, {
 */
 
-/* 
+/*
  Maybe we'll just do Classception
  let States = new Proxy(new Collection(new _States)) {
 
 */
 
 
-var States = new Proxy(new _Collection2.default(new _States()), {
-
-  // get: function (target, name, receiver) {
-  //   console.log('target', target);
-  //   console.log('name', name);
-  //   console.log('receiver', receiver);
-
-  //   if (name in target.__proto__) { // assume methods live on the prototype
-  //     return function (...args) {
-  //       var methodName = name;
-  //       // we now have access to both methodName and arguments
-  //     };
-  //   } else { // assume instance vars like on the target
-  //     return Reflect.get(target, name, receiver);
-  //   }
-  // }
-  call: function call(collection, prop, receiver) {
-    console.log('!--------------------call--------------------!');
-    console.log('call');
-    console.log('collection', collection);
-    console.log('prop', prop);
-    console.log('receiver', receiver);
-    console.log('!--------------------call--------------------!');
-  },
-  apply: function apply(collection, prop, receiver) {
-    console.log('!--------------------apply--------------------!');
-    console.log('apply');
-    console.log('collection', collection);
-    console.log('prop', prop);
-    console.log('receiver', receiver);
-    console.log('!--------------------apply--------------------!');
-  },
-  get: function get(collection, prop, receiver) {
-    console.log('collection', collection);
-    console.log('prop', prop);
-    var klass = null;
-    var method = null;
-    if (prop in collection.guest) {
-      var _console;
-
-      // assume methods live on the prototype
-      console.log('!--------------------Guest--------------------!');
-
-      klass = collection.guest;
-      method = klass[prop];
-      console.log('klass', klass);
-      console.log('method', method);
-      console.log('args', arguments);
-      (_console = console).log.apply(_console, ['args'].concat(_toConsumableArray(args)));
-      /* return function (...args) {
-        var methodprop = prop;
-        // we now have access to both methodprop and arguments
-      }; */
-    } else if (prop in collection.__proto__) {
-      // assume methods live on the prototype // assume instance vars like on the target
-      console.log('Collection has proto!');
-      return collection.__proto__[prop];
-    } else {
-      // klass =  Reflect.get(collection.guest, prop, prop);
-      // console.log('klass', klass);
-      // return klass;
-      console.log('Go Native');
-      console.log(receiver);
-      // console.log(args);
-      console.log(collection.data[prop]);
-      console.log([][prop].apply(collection.guest, collection.guest.arguments));
-
-      var _method = collection.data[prop].apply(collection.guest, arguments);
-      console.log(_method);
-      _method.apply(collection.guest, [k, n]);
-    }
-  }
-});
+var States = new _States();
 
 exports.default = States;

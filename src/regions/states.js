@@ -1,9 +1,13 @@
 import Collection from '../Collection';
 
 class _States {
-  
+
   constructor() {
     this.data = this.defaults();
+    this.collection = new Collection;
+    Object.assign(this.data.__proto__, this.collection);
+    Object.assign(this.data.__proto__, this);
+    return this.data;
   }
 
   other() {
@@ -268,86 +272,11 @@ class _States {
  let States = new Proxy({ self: new _States, collection: new Collection}, {
 */
 
-/* 
+/*
  Maybe we'll just do Classception
  let States = new Proxy(new Collection(new _States)) {
 
 */
-let States = new Proxy(new Collection(new _States), { 
-
-
-  // get: function (target, name, receiver) {
-  //   console.log('target', target);
-  //   console.log('name', name);
-  //   console.log('receiver', receiver);
-
-  //   if (name in target.__proto__) { // assume methods live on the prototype
-  //     return function (...args) {
-  //       var methodName = name;
-  //       // we now have access to both methodName and arguments
-  //     };
-  //   } else { // assume instance vars like on the target
-  //     return Reflect.get(target, name, receiver);
-  //   }
-  // }
-  call: (collection, prop, receiver) => {
-    console.log('!--------------------call--------------------!')
-    console.log('call');
-    console.log('collection', collection);
-    console.log('prop', prop);
-    console.log('receiver', receiver);
-    console.log('!--------------------call--------------------!')
-    
-  },
-  apply: (collection, prop, receiver) => {
-    console.log('!--------------------apply--------------------!')   
-    console.log('apply');
-    console.log('collection', collection);
-    console.log('prop', prop);
-    console.log('receiver', receiver);
-    console.log('!--------------------apply--------------------!')
-  },
-  get: function (collection, prop, receiver) {
-    console.log('collection', collection);
-    console.log('prop', prop);
-      let klass = null;
-      let method = null;
-      if (prop in collection.guest ) { // assume methods live on the prototype
-        console.log('!--------------------Guest--------------------!')
-        
-        klass = collection.guest;
-        method = klass[prop];
-        console.log('klass',klass);
-        console.log('method', method);
-        console.log('args', arguments);
-        console.log('args', ...args);
-        
-        /* return function (...args) {
-          var methodprop = prop;
-          // we now have access to both methodprop and arguments
-        }; */
-      } else if (prop in collection.__proto__) { // assume methods live on the prototype // assume instance vars like on the target
-        console.log('Collection has proto!');
-        console.log('klass', klass);
-        console.log('method', method);
-        console.log('args', arguments);
-        return collection.__proto__[prop];
-        console.log('args', ...args);
-      } else {
-        // klass =  Reflect.get(collection.guest, prop, prop);
-        // console.log('klass', klass);
-        // return klass;
-        console.log('Go Native');
-        console.log(receiver);
-        // console.log(args);
-        console.log(collection.data[prop]);
-        console.log([][prop].apply(collection.guest, collection.guest.arguments));
-        
-        let method = collection.data[prop].apply(collection.guest, arguments);
-        console.log(method);
-        method.apply(collection.guest, [k, n]);
-      }
-  }
-});
+let States = new _States;
 
 export default States;
