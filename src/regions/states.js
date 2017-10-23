@@ -14,13 +14,13 @@ class _States {
 
     // Assign any custom collection methods, or override collections
     // this.data.other = this.other; ? How does this even work
-    this.data.__proto__.withArmedForces = this.withArmedForces;
+    this.data.__proto__.withArmedForces = this._withArmedForces;
 
     // return the raw array
     return this.data;
   }
 
-  withArmedForces() {
+  _withArmedForces() {
     this.data.push(
       {
         code: 'AE',

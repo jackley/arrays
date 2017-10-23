@@ -29,16 +29,28 @@ var _States = function () {
 
     // Assign any custom collection methods, or override collections
     // this.data.other = this.other; ? How does this even work
-    this.data.__proto__.other = this.other;
+    this.data.__proto__.withArmedForces = this.withArmedForces;
 
     // return the raw array
     return this.data;
   }
 
   _createClass(_States, [{
-    key: 'other',
-    value: function other() {
-      console.log('something weird');
+    key: 'withArmedForces',
+    value: function withArmedForces() {
+      this.data.push({
+        code: 'AE',
+        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
+      });
+      this.data.push({
+        code: 'AA',
+        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
+      });
+      this.data.push({
+        code: 'AP',
+        name: 'ARMED FORCES PACIFIC'
+      });
+      return this.data;
     }
   }, {
     key: 'defaults',
@@ -220,15 +232,6 @@ var _States = function () {
       }, {
         code: 'WY',
         name: 'WYOMING'
-      }, {
-        code: 'AE',
-        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
-      }, {
-        code: 'AA',
-        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
-      }, {
-        code: 'AP',
-        name: 'ARMED FORCES PACIFIC'
       }];
     }
   }]);
