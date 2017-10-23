@@ -34,7 +34,7 @@ class _States {
         code: 'AP',
         name: 'ARMED FORCES PACIFIC'
       });
-    return this.data;
+    return this;
   }
 
   defaults() {
