@@ -22,18 +22,15 @@ class _States {
 
   _withArmedForces() {
     console.log(this.__proto__);
-    this.push(
-      {
+    this.push({
         code: 'AE',
         name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
       });
-    this.data.push(
-      {
+    this.push({
         code: 'AA',
         name: 'ARMED FORCES AMERICA (EXCEPT CANADA)',
       });
-    this.data.push(
-      {
+    this.push({
         code: 'AP',
         name: 'ARMED FORCES PACIFIC'
       });
