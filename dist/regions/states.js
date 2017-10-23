@@ -38,16 +38,16 @@ var _States = function () {
   _createClass(_States, [{
     key: '_withArmedForces',
     value: function _withArmedForces() {
-      console.log(this);
+      console.log(this.__proto__);
       this.push({
         code: 'AE',
         name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
       });
-      this.data.push({
+      this.push({
         code: 'AA',
         name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
       });
-      this.data.push({
+      this.push({
         code: 'AP',
         name: 'ARMED FORCES PACIFIC'
       });
