@@ -21,7 +21,7 @@ class _States {
   }
 
   _withArmedForces() {
-    console.log(this);
+    console.log(this.__proto__);
     this.push(
       {
         code: 'AE',

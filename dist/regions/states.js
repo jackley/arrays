@@ -39,21 +39,18 @@ var _States = function () {
     key: '_withArmedForces',
     value: function _withArmedForces() {
       console.log(this);
-      // this.data.push(
-      //   {
-      //     code: 'AE',
-      //     name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
-      //   });
-      // this.data.push(
-      //   {
-      //     code: 'AA',
-      //     name: 'ARMED FORCES AMERICA (EXCEPT CANADA)',
-      //   });
-      // this.data.push(
-      //   {
-      //     code: 'AP',
-      //     name: 'ARMED FORCES PACIFIC'
-      //   });
+      this.push({
+        code: 'AE',
+        name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
+      });
+      this.data.push({
+        code: 'AA',
+        name: 'ARMED FORCES AMERICA (EXCEPT CANADA)'
+      });
+      this.data.push({
+        code: 'AP',
+        name: 'ARMED FORCES PACIFIC'
+      });
       return this.data;
     }
   }, {
