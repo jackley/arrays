@@ -9,17 +9,17 @@ class Collection {
     this.sortBy = this._sortBy;
   }
 
-  keyBy(index) {
+  _keyBy(index) {
     this.data.forEach((d, n) => {
       console.log(n + 30, d);
     });
   }
 
-  weirdSortNameTest() {
+  _weirdSortNameTest() {
 
   }
 
-  sortBy() {
+  _sortBy() {
 
   }
 

@@ -12,9 +12,12 @@ var Collection = function () {
   function Collection(guest) {
     _classCallCheck(this, Collection);
 
-    this.guest = guest;
+    // this.guest = guest;
     // this.data = guest.data;
-    Object.assign(this, guest);
+    // Object.assign(this, guest);
+    this.keyBy = this._keyBy;
+    this.weirdSortNameTest = this._weirdSortNameTest;
+    this.sortBy = this._sortBy;
   }
 
   _createClass(Collection, [{
@@ -30,11 +33,11 @@ var Collection = function () {
   }, {
     key: "sortBy",
     value: function sortBy() {}
-  }, {
-    key: "forEach",
-    value: function forEach(x, n) {
-      return this.guest.data.forEach;
-    }
+
+    // forEach(x, n) {
+    //   return this.guest.data.forEach;
+    // }
+
   }]);
 
   return Collection;
