@@ -18,10 +18,19 @@ var _States = function () {
   function _States() {
     _classCallCheck(this, _States);
 
+    // Get our default Data
     this.data = this.defaults();
-    this.collection = new _Collection2.default();
-    Object.assign(this.data.__proto__, this.collection);
-    Object.assign(this.data.__proto__, this);
+
+    // New up a collection
+    var collection = new _Collection2.default();
+
+    // Add shared collection stuff
+    Object.assign(this.data.__proto__, collection);
+
+    // Assign any custom collection methods, or override collections
+    this.data.other = this.other;
+
+    // return the raw array
     return this.data;
   }
 
@@ -225,17 +234,6 @@ var _States = function () {
 
   return _States;
 }();
-/*
- Could do multiple inheritance
- let States = new Proxy({ self: new _States, collection: new Collection}, {
-*/
-
-/*
- Maybe we'll just do Classception
- let States = new Proxy(new Collection(new _States)) {
-
-*/
-
 
 var States = new _States();
 
