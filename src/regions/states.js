@@ -15,13 +15,28 @@ class _States {
     // Assign any custom collection methods, or override collections
     // this.data.other = this.other; ? How does this even work
     this.data.__proto__.withArmedForces = this._withArmedForces;
+    this.data.__proto__.withMicronesia = this._withMicronesia;
+    this.data.__proto__.withMn = this._withMicronesia;
+    this.data.__proto__.withDistrictOfColumbia = this._withDistrictOfColumbia;
+    this.data.__proto__.withDC = this._withDistrictOfColumbia;
+    this.data.__proto__.withMarshallIslands = this._withMarshallIslands;
+    this.data.__proto__.withMh = this._withMarshallIslands;
+    this.data.__proto__.withGuam = this._withGuam;
+    this.data.__proto__.withGU = this._withGuam;
+    this.data.__proto__.withMarianaIslands = this._withMarianaIslands;
+    this.data.__proto__.withMI = this._withMarianaIslands;
+    this.data.__proto__.withMarianaIslands = this._withMarianaIslands;
+    this.data.__proto__.withMI = this._withMarianaIslands;
+    this.data.__proto__.withPalau = this._withPalau;
+    this.data.__proto__.withPW = this._withPalau;
+    this.data.__proto__.withPuertoRico = this._withPuertoRico;
+    this.data.__proto__.withPR = this._withPuertoRico;
 
     // return the raw array
     return this.data;
   }
 
   _withArmedForces() {
-    //console.log(this.__proto__);
     this.push({
         code: 'AE',
         name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST',
@@ -34,6 +49,62 @@ class _States {
         code: 'AP',
         name: 'ARMED FORCES PACIFIC'
       });
+    return this;
+  }
+
+  _withMicronesia() { // or withMn
+    this.push({
+      code: 'FM',
+      name: 'FEDERATED STATES OF MICRONESIA',
+    });
+    return this;
+  }
+
+  _withDistrictOfColumbia() { // or withDC
+    this.push({
+      code: 'DC',
+      name: 'DISTRICT OF COLUMBIA',
+    });
+    return this;
+  }
+
+  _withMarshallIslands() { // or withMh
+    this.push({
+      code: 'MH',
+      name: 'MARSHALL ISLANDS',
+    });
+    return this;
+  }
+
+  _withGuam() { // or withGU
+    this.push({
+      code: 'GU',
+      name: 'GUAM GU',
+    });
+    return this;
+  }
+
+  _withMarianaIslands() { // or withMI
+    this.push({
+      code: 'MP',
+      name: 'NORTHERN MARIANA ISLANDS',
+    });
+    return this;
+  }
+
+  _withPalau() { // or withPW
+    this.push({
+      code: 'PW',
+      name: 'PALAU',
+    });
+    return this;
+  }
+
+  _withPuertoRico() { // or withPR
+    this.push({
+      code: 'PR',
+      name: 'PUERTO RICO',
+    });
     return this;
   }
 
@@ -76,24 +147,12 @@ class _States {
         name: 'DELAWARE',
       },
       {
-        code: 'DC',
-        name: 'DISTRICT OF COLUMBIA',
-      },
-      {
-        code: 'FM',
-        name: 'FEDERATED STATES OF MICRONESIA',
-      },
-      {
         code: 'FL',
         name: 'FLORIDA',
       },
       {
         code: 'GA',
         name: 'GEORGIA',
-      },
-      {
-        code: 'GU',
-        name: 'GUAM GU',
       },
       {
         code: 'HI',
@@ -130,10 +189,6 @@ class _States {
       {
         code: 'ME',
         name: 'MAINE',
-      },
-      {
-        code: 'MH',
-        name: 'MARSHALL ISLANDS',
       },
       {
         code: 'MD',
@@ -196,10 +251,6 @@ class _States {
         name: 'NORTH DAKOTA',
       },
       {
-        code: 'MP',
-        name: 'NORTHERN MARIANA ISLANDS',
-      },
-      {
         code: 'OH',
         name: 'OHIO',
       },
@@ -212,16 +263,8 @@ class _States {
         name: 'OREGON',
       },
       {
-        code: 'PW',
-        name: 'PALAU',
-      },
-      {
         code: 'PA',
         name: 'PENNSYLVANIA',
-      },
-      {
-        code: 'PR',
-        name: 'PUERTO RICO',
       },
       {
         code: 'RI',
