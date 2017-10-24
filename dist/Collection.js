@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -23,17 +23,17 @@ var Collection = function () {
   }
 
   _createClass(Collection, [{
-    key: "_keyBy",
+    key: '_keyBy',
     value: function _keyBy(index) {
       this.data.forEach(function (d, n) {
         console.log(n + 30, d);
       });
     }
   }, {
-    key: "_sortBy",
+    key: '_sortBy',
     value: function _sortBy() {}
   }, {
-    key: "_toLowerCase",
+    key: '_toLowerCase',
     value: function _toLowerCase() {
       var _this = this;
 
@@ -42,6 +42,9 @@ var Collection = function () {
       var key = void 0;
       this.forEach(function (x, n) {
         _this.signature.forEach(function (key) {
+          if (typeof x[key] != 'string') {
+            return;
+          }
 
           if (only) {
             if (Array.isArray(only)) {
@@ -62,7 +65,7 @@ var Collection = function () {
       return this;
     }
   }, {
-    key: "_toUpperCase",
+    key: '_toUpperCase',
     value: function _toUpperCase() {
       var _this2 = this;
 
@@ -71,6 +74,9 @@ var Collection = function () {
       var key = void 0;
       this.forEach(function (x, n) {
         _this2.signature.forEach(function (key) {
+          if (typeof x[key] != 'string') {
+            return;
+          }
 
           if (only) {
             if (Array.isArray(only)) {

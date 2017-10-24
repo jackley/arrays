@@ -13,7 +13,7 @@ class _Colors {
 
     // Apply our signature
     this.data.__proto__.signature = [
-      'code', 'name'
+      'hex', 'shortHex', 'rgb', 'RGB', 'hsl', 'HSL', 'group', 'name',
     ];
 
     // Add shared collection stuff
@@ -46,7 +46,9 @@ class _Colors {
   _withHash() {
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
-        x[key] = `#${x[key]}';`
+        if (key === 'hex' || key === 'shortHex') {
+          x[key] = `#${x[key]}`;
+        }
       });
     });
 
