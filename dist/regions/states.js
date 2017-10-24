@@ -18,14 +18,14 @@ var _States = function () {
   function _States() {
     _classCallCheck(this, _States);
 
-    // Apply our signature
-    this.data.__proto__.signature = ['code', 'name'];
-
     // Get our default Data
     this.data = this.defaults();
 
     // New up a collection
     var collection = new _Collection2.default();
+
+    // Apply our signature
+    this.data.__proto__.signature = ['code', 'name'];
 
     // Add shared collection stuff
     Object.assign(this.data.__proto__, collection);

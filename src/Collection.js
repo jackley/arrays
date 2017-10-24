@@ -7,6 +7,7 @@ class Collection {
     this.keyBy = this._keyBy;
     this.weirdSortNameTest = this._weirdSortNameTest;
     this.sortBy = this._sortBy;
+    this.toLowerCase = this._toLowerCase;
   }
 
   _keyBy(index) {
