@@ -20,14 +20,25 @@ class Collection {
 
   }
 
-  _toLowerCase() {
+  _toLowerCase(only = false) { // string or array
     let key;
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
-        console.log(this[n]);
-        console.log(this[n][key]);
-        x[key] = x[key].toLowerCase();
-        //this[n][key] = x[key].toLowerCase();
+
+        if (only) {
+          if (Array.isArray(only) ) {
+            only.forEach((a) => {
+              if (key === a) {
+                x[key] = x[key].toLowerCase();
+              }
+            });
+          } else if (key === only) {
+            x[key] = x[key].toLowerCase();
+          }
+        } else {
+          x[key] = x[key].toLowerCase();
+        }
+
       });
     });
 

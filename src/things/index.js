@@ -1,4 +1,5 @@
-import states from './states';
+// import vehicles from './vehicles';
+import colors from './colors';
 
 
-export default { states };
+export default { colors };
