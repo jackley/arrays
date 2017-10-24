@@ -39,7 +39,7 @@ var Collection = function () {
       var key = void 0;
       this.forEach(function (x, n) {
         _this.signature.forEach(function (key) {
-          _this[n][key] = x.toLowerCase();
+          _this[x][key] = x[key].toLowerCase();
         });
       });
 

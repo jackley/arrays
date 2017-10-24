@@ -24,7 +24,10 @@ class Collection {
     let key;
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
-        this[x][key] = x[key].toLowerCase();
+        console.log(this[n]);
+        console.log(this[n][key]);
+        x[key] = x[key].toLowerCase();
+        //this[n][key] = x[key].toLowerCase();
       });
     });
 
