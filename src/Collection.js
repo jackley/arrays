@@ -25,6 +25,9 @@ class Collection {
     let key;
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
+        if (typeof x[key] != 'string') {
+          return;
+        }
 
         if (only) {
           if (Array.isArray(only) ) {
@@ -50,6 +53,9 @@ class Collection {
     let key;
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
+        if (typeof x[key] != 'string') {
+          return;
+        }
 
         if (only) {
           if (Array.isArray(only) ) {

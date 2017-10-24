@@ -19,6 +19,7 @@ var Collection = function () {
     this.weirdSortNameTest = this._weirdSortNameTest;
     this.sortBy = this._sortBy;
     this.toUpperCase = this._toUpperCase;
+    this.toLowerCase = this._toLowerCase;
   }
 
   _createClass(Collection, [{
