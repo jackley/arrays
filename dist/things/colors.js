@@ -25,7 +25,7 @@ var _Colors = function () {
     var collection = new _Collection2.default();
 
     // Apply our signature
-    this.data.__proto__.signature = ['code', 'name'];
+    this.data.__proto__.signature = ['hex', 'shortHex', 'rgb', 'RGB', 'hsl', 'HSL', 'group', 'name'];
 
     // Add shared collection stuff
     Object.assign(this.data.__proto__, collection);
@@ -65,7 +65,9 @@ var _Colors = function () {
 
       this.forEach(function (x, n) {
         _this2.signature.forEach(function (key) {
-          x[key] = '#' + x[key] + '\';';
+          if (key === 'hex' || key === 'shortHex') {
+            x[key] = '#' + x[key];
+          }
         });
       });
 

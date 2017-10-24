@@ -32,7 +32,7 @@ class _Colors {
     this.forEach((x, n) => {
       this.signature.forEach((key) => {
         if (which.toUpperCase() === 'RGB') {
-          x.rgb = Object.keys(x.RGB).join(', ');
+          x.rgb = Object.values(x.RGB).join(', ');
 
         } else if (which.toUpperCase() === 'HSL') {
           x.hsl = Object.keys(x.HSL).join(', ');
