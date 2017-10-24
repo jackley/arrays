@@ -15,12 +15,19 @@ class Collection {
     });
   }
 
-  _weirdSortNameTest() {
+  _sortBy() {
 
   }
 
-  _sortBy() {
+  _toLowerCase() {
+    const key;
+    this.forEach((x, n) => {
+      this.signature.forEach((key) => {
+        this[n][key] = x.toLowerCase();
+      });
+    });
 
+    return this;
   }
 
   // forEach(x, n) {

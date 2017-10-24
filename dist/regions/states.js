@@ -30,6 +30,22 @@ var _States = function () {
     // Assign any custom collection methods, or override collections
     // this.data.other = this.other; ? How does this even work
     this.data.__proto__.withArmedForces = this._withArmedForces;
+    this.data.__proto__.withMicronesia = this._withMicronesia;
+    this.data.__proto__.withMn = this._withMicronesia;
+    this.data.__proto__.withDistrictOfColumbia = this._withDistrictOfColumbia;
+    this.data.__proto__.withDC = this._withDistrictOfColumbia;
+    this.data.__proto__.withMarshallIslands = this._withMarshallIslands;
+    this.data.__proto__.withMh = this._withMarshallIslands;
+    this.data.__proto__.withGuam = this._withGuam;
+    this.data.__proto__.withGU = this._withGuam;
+    this.data.__proto__.withMarianaIslands = this._withMarianaIslands;
+    this.data.__proto__.withMI = this._withMarianaIslands;
+    this.data.__proto__.withMarianaIslands = this._withMarianaIslands;
+    this.data.__proto__.withMI = this._withMarianaIslands;
+    this.data.__proto__.withPalau = this._withPalau;
+    this.data.__proto__.withPW = this._withPalau;
+    this.data.__proto__.withPuertoRico = this._withPuertoRico;
+    this.data.__proto__.withPR = this._withPuertoRico;
 
     // return the raw array
     return this.data;
@@ -38,7 +54,6 @@ var _States = function () {
   _createClass(_States, [{
     key: '_withArmedForces',
     value: function _withArmedForces() {
-      //console.log(this.__proto__);
       this.push({
         code: 'AE',
         name: 'ARMED FORCES AFRICA \ CANADA \ EUROPE \ MIDDLE EAST'
@@ -50,6 +65,76 @@ var _States = function () {
       this.push({
         code: 'AP',
         name: 'ARMED FORCES PACIFIC'
+      });
+      return this;
+    }
+  }, {
+    key: '_withMicronesia',
+    value: function _withMicronesia() {
+      // or withMn
+      this.push({
+        code: 'FM',
+        name: 'FEDERATED STATES OF MICRONESIA'
+      });
+      return this;
+    }
+  }, {
+    key: '_withDistrictOfColumbia',
+    value: function _withDistrictOfColumbia() {
+      // or withDC
+      this.push({
+        code: 'DC',
+        name: 'DISTRICT OF COLUMBIA'
+      });
+      return this;
+    }
+  }, {
+    key: '_withMarshallIslands',
+    value: function _withMarshallIslands() {
+      // or withMh
+      this.push({
+        code: 'MH',
+        name: 'MARSHALL ISLANDS'
+      });
+      return this;
+    }
+  }, {
+    key: '_withGuam',
+    value: function _withGuam() {
+      // or withGU
+      this.push({
+        code: 'GU',
+        name: 'GUAM GU'
+      });
+      return this;
+    }
+  }, {
+    key: '_withMarianaIslands',
+    value: function _withMarianaIslands() {
+      // or withMI
+      this.push({
+        code: 'MP',
+        name: 'NORTHERN MARIANA ISLANDS'
+      });
+      return this;
+    }
+  }, {
+    key: '_withPalau',
+    value: function _withPalau() {
+      // or withPW
+      this.push({
+        code: 'PW',
+        name: 'PALAU'
+      });
+      return this;
+    }
+  }, {
+    key: '_withPuertoRico',
+    value: function _withPuertoRico() {
+      // or withPR
+      this.push({
+        code: 'PR',
+        name: 'PUERTO RICO'
       });
       return this;
     }
@@ -84,20 +169,11 @@ var _States = function () {
         code: 'DE',
         name: 'DELAWARE'
       }, {
-        code: 'DC',
-        name: 'DISTRICT OF COLUMBIA'
-      }, {
-        code: 'FM',
-        name: 'FEDERATED STATES OF MICRONESIA'
-      }, {
         code: 'FL',
         name: 'FLORIDA'
       }, {
         code: 'GA',
         name: 'GEORGIA'
-      }, {
-        code: 'GU',
-        name: 'GUAM GU'
       }, {
         code: 'HI',
         name: 'HAWAII'
@@ -125,9 +201,6 @@ var _States = function () {
       }, {
         code: 'ME',
         name: 'MAINE'
-      }, {
-        code: 'MH',
-        name: 'MARSHALL ISLANDS'
       }, {
         code: 'MD',
         name: 'MARYLAND'
@@ -174,9 +247,6 @@ var _States = function () {
         code: 'ND',
         name: 'NORTH DAKOTA'
       }, {
-        code: 'MP',
-        name: 'NORTHERN MARIANA ISLANDS'
-      }, {
         code: 'OH',
         name: 'OHIO'
       }, {
@@ -186,14 +256,8 @@ var _States = function () {
         code: 'OR',
         name: 'OREGON'
       }, {
-        code: 'PW',
-        name: 'PALAU'
-      }, {
         code: 'PA',
         name: 'PENNSYLVANIA'
-      }, {
-        code: 'PR',
-        name: 'PUERTO RICO'
       }, {
         code: 'RI',
         name: 'RHODE ISLAND'

@@ -3,6 +3,12 @@ import Collection from '../Collection';
 class _States {
 
   constructor() {
+
+    // Apply our signature
+    this.data.__proto__.signature = [
+      'code', 'name'
+    ];
+
     // Get our default Data
     this.data = this.defaults();
 
@@ -31,6 +37,10 @@ class _States {
     this.data.__proto__.withPW = this._withPalau;
     this.data.__proto__.withPuertoRico = this._withPuertoRico;
     this.data.__proto__.withPR = this._withPuertoRico;
+    this.data.__proto__.withAmericanSamoa = this._withAmericanSamoa;
+    this.data.__proto__.withAS = this._withAmericanSamoa;
+    this.data.__proto__.withVirginIslands = this._withVirginIslands;
+    this.data.__proto__.withVI = this._withVirginIslands;
 
     // return the raw array
     return this.data;
@@ -108,6 +118,22 @@ class _States {
     return this;
   }
 
+  _withAmericanSamoa() { // or withAS
+    this.push({
+      code: 'AS',
+      name: 'AMERICAN SAMOA',
+    });
+    return this;
+  }
+
+  _withVirginIslands() { // or withVI
+    this.push({
+      code: 'VI',
+      name: 'VIRGIN ISLANDS',
+    });
+    return this;
+  }
+
   defaults() {
     return [
       {
@@ -117,10 +143,6 @@ class _States {
       {
         code: 'AK',
         name: 'ALASKA',
-      },
-      {
-        code: 'AS',
-        name: 'AMERICAN SAMOA',
       },
       {
         code: 'AZ',
@@ -293,10 +315,6 @@ class _States {
       {
         code: 'VT',
         name: 'VERMONT',
-      },
-      {
-        code: 'VI',
-        name: 'VIRGIN ISLANDS',
       },
       {
         code: 'VA',
