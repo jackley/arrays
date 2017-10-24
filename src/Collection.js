@@ -7,7 +7,7 @@ class Collection {
     this.keyBy = this._keyBy;
     this.weirdSortNameTest = this._weirdSortNameTest;
     this.sortBy = this._sortBy;
-    this.toLowerCase = this._toLowerCase;
+    this.toUpperCase = this._toUpperCase;
   }
 
   _keyBy(index) {
@@ -37,6 +37,31 @@ class Collection {
           }
         } else {
           x[key] = x[key].toLowerCase();
+        }
+
+      });
+    });
+
+    return this;
+  }
+
+  _toUpperCase(only = false) { // string or array
+    let key;
+    this.forEach((x, n) => {
+      this.signature.forEach((key) => {
+
+        if (only) {
+          if (Array.isArray(only) ) {
+            only.forEach((a) => {
+              if (key === a) {
+                x[key] = x[key].toUpperCase();
+              }
+            });
+          } else if (key === only) {
+            x[key] = x[key].toUpperCase();
+          }
+        } else {
+          x[key] = x[key].toUpperCase();
         }
 
       });

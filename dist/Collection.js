@@ -36,13 +36,25 @@ var Collection = function () {
     value: function _toLowerCase() {
       var _this = this;
 
+      var only = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      // string or array
       var key = void 0;
       this.forEach(function (x, n) {
         _this.signature.forEach(function (key) {
-          console.log(_this[n]);
-          console.log(_this[n][key]);
-          x[key] = x[key].toLowerCase();
-          //this[n][key] = x[key].toLowerCase();
+
+          if (only) {
+            if (Array.isArray(only)) {
+              only.forEach(function (a) {
+                if (key === a) {
+                  x[key] = x[key].toLowerCase();
+                }
+              });
+            } else if (key === only) {
+              x[key] = x[key].toLowerCase();
+            }
+          } else {
+            x[key] = x[key].toLowerCase();
+          }
         });
       });
 

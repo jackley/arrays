@@ -4,10 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _colors = require('./colors');
+var _manufacturers = require('./manufacturers');
 
-var _colors2 = _interopRequireDefault(_colors);
+var _manufacturers2 = _interopRequireDefault(_manufacturers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = { colors: _colors2.default }; // import vehicles from './vehicles';
+exports.default = { manufacturers: _manufacturers2.default };
