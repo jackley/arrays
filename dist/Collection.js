@@ -18,7 +18,7 @@ var Collection = function () {
     this.keyBy = this._keyBy;
     this.weirdSortNameTest = this._weirdSortNameTest;
     this.sortBy = this._sortBy;
-    this.toLowerCase = this._toLowerCase;
+    this.toUpperCase = this._toUpperCase;
   }
 
   _createClass(Collection, [{
@@ -54,6 +54,35 @@ var Collection = function () {
             }
           } else {
             x[key] = x[key].toLowerCase();
+          }
+        });
+      });
+
+      return this;
+    }
+  }, {
+    key: "_toUpperCase",
+    value: function _toUpperCase() {
+      var _this2 = this;
+
+      var only = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      // string or array
+      var key = void 0;
+      this.forEach(function (x, n) {
+        _this2.signature.forEach(function (key) {
+
+          if (only) {
+            if (Array.isArray(only)) {
+              only.forEach(function (a) {
+                if (key === a) {
+                  x[key] = x[key].toUpperCase();
+                }
+              });
+            } else if (key === only) {
+              x[key] = x[key].toUpperCase();
+            }
+          } else {
+            x[key] = x[key].toUpperCase();
           }
         });
       });
