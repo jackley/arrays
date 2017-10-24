@@ -4,16 +4,17 @@ class _States {
 
   constructor() {
 
-    // Apply our signature
-    this.data.__proto__.signature = [
-      'code', 'name'
-    ];
 
     // Get our default Data
     this.data = this.defaults();
 
     // New up a collection
     const collection = new Collection;
+
+    // Apply our signature
+    this.data.__proto__.signature = [
+      'code', 'name'
+    ];
 
     // Add shared collection stuff
     Object.assign(this.data.__proto__, collection);

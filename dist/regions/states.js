@@ -18,6 +18,9 @@ var _States = function () {
   function _States() {
     _classCallCheck(this, _States);
 
+    // Apply our signature
+    this.data.__proto__.signature = ['code', 'name'];
+
     // Get our default Data
     this.data = this.defaults();
 
@@ -46,6 +49,10 @@ var _States = function () {
     this.data.__proto__.withPW = this._withPalau;
     this.data.__proto__.withPuertoRico = this._withPuertoRico;
     this.data.__proto__.withPR = this._withPuertoRico;
+    this.data.__proto__.withAmericanSamoa = this._withAmericanSamoa;
+    this.data.__proto__.withAS = this._withAmericanSamoa;
+    this.data.__proto__.withVirginIslands = this._withVirginIslands;
+    this.data.__proto__.withVI = this._withVirginIslands;
 
     // return the raw array
     return this.data;
@@ -139,6 +146,26 @@ var _States = function () {
       return this;
     }
   }, {
+    key: '_withAmericanSamoa',
+    value: function _withAmericanSamoa() {
+      // or withAS
+      this.push({
+        code: 'AS',
+        name: 'AMERICAN SAMOA'
+      });
+      return this;
+    }
+  }, {
+    key: '_withVirginIslands',
+    value: function _withVirginIslands() {
+      // or withVI
+      this.push({
+        code: 'VI',
+        name: 'VIRGIN ISLANDS'
+      });
+      return this;
+    }
+  }, {
     key: 'defaults',
     value: function defaults() {
       return [{
@@ -147,9 +174,6 @@ var _States = function () {
       }, {
         code: 'AK',
         name: 'ALASKA'
-      }, {
-        code: 'AS',
-        name: 'AMERICAN SAMOA'
       }, {
         code: 'AZ',
         name: 'ARIZONA'
@@ -279,9 +303,6 @@ var _States = function () {
       }, {
         code: 'VT',
         name: 'VERMONT'
-      }, {
-        code: 'VI',
-        name: 'VIRGIN ISLANDS'
       }, {
         code: 'VA',
         name: 'VIRGINIA'

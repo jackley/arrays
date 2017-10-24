@@ -28,11 +28,22 @@ var Collection = function () {
       });
     }
   }, {
-    key: "_weirdSortNameTest",
-    value: function _weirdSortNameTest() {}
-  }, {
     key: "_sortBy",
     value: function _sortBy() {}
+  }, {
+    key: "_toLowerCase",
+    value: function _toLowerCase() {
+      var _this = this;
+
+      var key = void 0;
+      this.forEach(function (x, n) {
+        _this.signature.forEach(function (key) {
+          _this[n][key] = x.toLowerCase();
+        });
+      });
+
+      return this;
+    }
 
     // forEach(x, n) {
     //   return this.guest.data.forEach;
