@@ -62,6 +62,9 @@ module.exports = function webpackConfig(config) {
     output: {
       path: path.resolve(__dirname, config.scripts.dest),
       filename: '[name].js',
+      library: 'AccessibleSubmenu',
+      libraryTarget: 'umd',
+
     },
     resolve: {
       extensions: ['', '.js', '.jsx', '.html', '.json', '.vue'],
